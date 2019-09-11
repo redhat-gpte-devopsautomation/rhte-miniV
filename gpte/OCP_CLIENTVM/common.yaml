@@ -9,9 +9,6 @@ install_ipa_client: false
 key_name: gpte
 # THE REST
 __meta__:
-  secrets:
-    - gpte-rw-aws-creds
-
   catalog:
     namespace: openshift
 
@@ -27,10 +24,18 @@ __meta__:
       - ocp
 
   deployer:
-    scm_url: https://github.com/redhat-cop/agnosticd.git
-    scm_type: git
-    scm_ref: development
-    type: agnosticd
+    scm_type:                 git
+    scm_url:                  https://github.com/redhat-cop/agnosticd.git
+    scm_ref:                  ocp4-client-vm-0.1
+    scm_tag_prefix:           ocp4-client-vm  # Dynamic lookup of latest tag
+    type:                     agnosticd # default agnosticd
+    entry_point:              ansible/main.yml
+
+  callback:
+      url:                      ""
+      token:                    ""
 
   tower:
-    oragnization: gpte
+    organization:             gpte
+    run_group:                na  # e.g.region hint, stage hint (dev|prod)
+    action:                   deploy 

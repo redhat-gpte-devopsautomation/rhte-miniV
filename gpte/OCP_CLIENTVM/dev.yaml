@@ -1,6 +1,17 @@
 ---
 cloudformation_retries: 0
 clientvm_instance_type: t2.medium
+env_type:                     ocp-clientvm
+email:                        babylon@example.com
+subdomain_base_suffix:        .sandbox422.opentlc.com
+own_repo_path:                http://admin.na
+cloud_provider:               ec2
+aws_region:                   ap-southeast-2
+HostedZoneId:                 Z12ZVUBFMBSIOW 
+key_name:                     gpte
+aws_access_key_id:            <Need to be populated>
+aws_secret_access_key:        <Need to be populated> 
+guid:		              sandbox3
 
 agnosticv_meta:
   idle_after_deploy: 1
