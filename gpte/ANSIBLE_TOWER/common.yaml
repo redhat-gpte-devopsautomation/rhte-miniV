@@ -1,33 +1,31 @@
 # Agnosticd variables
 platform: labs
-env_type: ocp-clientvm
-software_to_deploy: none
-clientvm_instance_type: t2.large
+env_type: ansible-tower
+software_to_deploy: tower
 install_ftl: false
-student_name: lab-user
 install_ipa_client: false
 key_name: gpte
 # THE REST
 __meta__:
   catalog:
-    namespace: openshift
+    namespace: ansible
 
     description: >-
-      Install OCP Client VM
+      Install Ansible Tower
     parameters:
-      - name: osrelease
-        description: "OCP version"
-        value: 3.9.51
+      - name: tower_version
+        description: "Tower Version"
+        value: 3.5.0-1
 
     tags:
       - babylon
-      - ocp
+      - ansible
 
   deployer:
     scm_type:                 git
     scm_url:                  https://github.com/redhat-cop/agnosticd.git
-    scm_ref:                  ocp4-client-vm-0.1
-    scm_tag_prefix:           ocp4-client-vm  # Dynamic lookup of latest tag
+    scm_ref:                  tower_worker_0
+    scm_tag_prefix:           tower_worker_0  # Dynamic lookup of latest tag
     type:                     agnosticd # default agnosticd
     entry_point:              ansible/main.yml
 

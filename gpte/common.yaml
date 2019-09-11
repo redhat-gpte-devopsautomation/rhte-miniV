@@ -16,3 +16,9 @@ agnosticv_meta:
     ipapass: ipa_host_password
     user: student_name
     course: course_name
+
+
+HostedZoneId:                 <Need to be populated> 
+key_name:                     gpte
+aws_access_key_id:            <Need to be populated>
+aws_secret_access_key:        <Need to be populated> 
