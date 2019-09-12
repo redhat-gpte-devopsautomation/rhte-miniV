@@ -17,3 +17,24 @@ software_to_deploy: tower
 tower_instance_count: 1
 support_instance_count: 1
 worker_instance_count: 0
+root_filesystem_size: 20
+
+
+### Ansible Tower Workload
+default_workloads:
+  - tower-license-injector
+  - tower-user-create
+  - tower-org-create
+
+
+tower_user_accounts:                                      #Define users you want to create. Set superuser: yes to make user system wide System Administrator
+  - user: rhte
+    password: changeme
+    email: rhte@example.com
+    firstname: Welcome
+    lastname: RHTE
+    superuser: yes
+
+tower_organization:
+  - name: gpte
+  - name: openshiftbu
