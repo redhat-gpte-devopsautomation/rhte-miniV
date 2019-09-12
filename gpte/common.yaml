@@ -19,6 +19,7 @@ agnosticv_meta:
 
 
 HostedZoneId:                 <Need to be populated> 
+subdomain_base_suffix:        <Need to be Populated>
 key_name:                     gpte
 aws_access_key_id:            <Need to be populated>
 aws_secret_access_key:        <Need to be populated> 
